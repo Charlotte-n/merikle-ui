@@ -1,5 +1,5 @@
 {
-  "name": "Merikle-Ui",
+  "name": "merikle-ui",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -39,7 +39,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "node_modules/cz-customizable"
+      "path": "./node_modules/cz-customizable"
     }
   }
 }
