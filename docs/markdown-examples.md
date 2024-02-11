@@ -84,6 +84,7 @@ This is a details block.
 
 Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).
 
-<preview path="./components/button.vue"  title="演示" description="巴拉巴拉巴拉"></preview>
+[//]: # (<preview path="./components/button.vue"  title="演示" description="巴拉巴拉巴拉"></preview>)
 
-<preview path="./components/button.vue"  title="演示" description="巴拉巴拉巴拉"></preview>
+[//]: # ()
+[//]: # (<preview path="./components/button.vue"  title="演示" description="巴拉巴拉巴拉"></preview>)
