@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import Icon from "./components/icon/icon.vue";
+import { AddCircle } from "@vicons/ionicons5";
 </script>
 
 <template>
   <div>
-    <Icon></Icon>
+    <m-icon :size="20" :color="'red'">
+      <AddCircle></AddCircle>
+    </m-icon>
   </div>
 </template>
 

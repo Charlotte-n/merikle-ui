@@ -8,11 +8,11 @@ hero:
   tagline: My great project tagline
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 快速入门
+      link: /vitepress/guid/getting-start
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 组件库
+      link: /vitepress/components/icon
 
 features:
   - title: Feature A
@@ -22,5 +22,4 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-import 'virtual:uno.css'
 

@@ -3,10 +3,7 @@ import { AddCircle } from "@vicons/ionicons5";
 </script>
 
 <template>
-  <m-icon :size="19" :color="red">
-    <AddCircle></AddCircle>
-    <div>123</div>
-  </m-icon>
+  <m-icon :color="'red'" :size="30"></m-icon>
 </template>
 
 <style scoped></style>

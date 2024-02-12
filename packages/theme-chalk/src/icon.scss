@@ -1,0 +1,11 @@
+@use 'mixins/mixin.scss' as *;
+
+@include b(icon){
+  display: inline-flex;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  justify-content: center;
+  align-item: center;
+  font-size: inherit;
+}

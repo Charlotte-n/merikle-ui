@@ -9,7 +9,8 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "eslint": "eslint . –ext .vue,.js,.jsx,.cjs,.mjs –fix –ignore-path .gitignore",
     "format": "prettier –write './**/*.{html,vue,ts,js,json,md}'",
-    "dev": "pnpm run -C play dev"
+    "dev": "pnpm run -C play dev",
+    "docs:dev": "pnpm run -C docs docs:dev"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +27,7 @@
     "eslint": "^8.56.0",
     "eslint-plugin-vue": "^9.21.1",
     "husky": "^9.0.10",
+    "sass": "^1.70.0",
     "typescript": "^5.3.3",
     "unplugin-vue-define-options": "^1.4.2",
     "vue": "^3.4.15"
