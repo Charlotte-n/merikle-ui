@@ -1,0 +1,17 @@
+@use 'sass:map';
+$primary:#857AFE;
+$info: #505050;
+$success: #09b63d;
+$warning: #f57b29;
+$danger: #ec3437;
+$button-colors: (
+        'primary': $primary,
+        'info': $info,
+        'success': $success,
+        'warning': $warning,
+        'danger': $danger,
+);
+// 定义按钮样式的 mixin
+@mixin button-style($type) {
+  background-color: map-get($button-colors, $type)!important;
+}

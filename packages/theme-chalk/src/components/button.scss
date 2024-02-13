@@ -1,0 +1,43 @@
+@use '../mixins/mixin' as *;
+@use '../common/var' as *;
+@use '../mixins/button' as *;
+
+//根据不同的状态传入不同的颜色。
+@include b(button){
+  @each $type in $types {
+    // 调用 button-style mixin 应用不同类型的按钮样式
+    @include m($type) {
+      @include button-style($type);
+    }
+  }
+}
+
+@include b(button){
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  line-height: 1;
+
+  padding: 10px 20px;
+  border:0;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: none;
+  //不能复制
+  user-select: none;
+  vertical-align: middle;
+  //当是默认
+  @include m(default){
+    background-color: white!important;
+    color: #666666;
+    border: 1px solid #666666;
+  }
+
+  @include when(round){
+    border-radius: 20px;
+  }
+
+}

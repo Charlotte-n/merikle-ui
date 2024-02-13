@@ -8,7 +8,7 @@
       "moduleResolution": "node",
       "allowJs": false,
       "strict": true,
-      "noUnusedLocals": true,
+      "noUnusedLocals": false,
       "resolveJsonModule": true,
       "allowSyntheticDefaultImports": true,
       "esModuleInterop": true,

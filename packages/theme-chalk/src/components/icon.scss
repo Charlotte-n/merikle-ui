@@ -1,4 +1,4 @@
-@use 'mixins/mixin.scss' as *;
+@use '../mixins/mixin' as *;
 
 @include b(icon){
   display: inline-flex;
