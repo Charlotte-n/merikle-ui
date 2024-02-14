@@ -7,8 +7,18 @@ import { AddCircle } from "@vicons/ionicons5";
     <m-icon :size="20" :color="'red'">
       <AddCircle></AddCircle>
     </m-icon>
-    <m-button :color="'red'" type="primary"></m-button>
+    <div>
+      <m-button class="button" :color="'red'" type="primary" :size="'small'"
+        >123</m-button
+      >
+    </div>
+
+    <m-button :color="'red'" type="primary" :size="'large'"></m-button>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.button {
+  margin-bottom: 10px;
+}
+</style>

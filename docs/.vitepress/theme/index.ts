@@ -2,8 +2,8 @@
 import { h } from "vue";
 import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
-import MIcon from "@merikle-ui/components/icon";
-import MButton from "@merikle-ui/components/button";
+import MIcon from "@merikle-ui/components/icon/index";
+import MButton from "@merikle-ui/components/button/index";
 import "@merikle-ui/theme-chalk/src/index.scss";
 
 import {
@@ -26,7 +26,6 @@ export default {
   enhanceApp({ app, router, siteData }) {
     app.use(MIcon);
     app.use(MButton);
-
-    app.component("demo-preview", NaiveUIContainer);
+    app.component("demo-preview", ElementPlusContainer);
   },
 } satisfies Theme;

@@ -1,4 +1,6 @@
 @use 'sass:map';
+@use '../common/var.scss';
+@use './function.scss' as *;
 $primary:#857AFE;
 $info: #505050;
 $success: #09b63d;
@@ -11,7 +13,30 @@ $button-colors: (
         'warning': $warning,
         'danger': $danger,
 );
+
+$sizes: (
+        'small':(
+                'padding':0.8em 1.3em
+        ),
+        'middle':(
+                'padding':1em 2em
+        ),
+        'large':(
+                'padding':1.3em 2.8em
+        )
+);
 // 定义按钮样式的 mixin
 @mixin button-style($type) {
-  background-color: map-get($button-colors, $type)!important;
+
+  //hover
+  &:hover{
+    background-color: lighten(map.get($button-colors,$type), 10);
+  }
+  cursor: pointer;
+  background-color: map-get($button-colors, $type);
+}
+
+//定义size的样式
+@mixin button-size($size){
+  padding: map-get($sizes,$size,'padding')!important;
 }

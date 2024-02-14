@@ -19,7 +19,7 @@ export const buttonProp = {
   type: {
     type: String,
     validator: (
-      value: "default" | "primary" | "success" | "warning" | "info" | "danger",
+      value: "default" | "primary" | "success" | "warning" | "info" | "danger"
     ) => buttonTypes.includes(value),
     default: "default",
   },
@@ -34,5 +34,7 @@ export const buttonProp = {
   circle: Boolean,
   disabled: Boolean,
   color: String,
+  style: Object,
+  class: String,
 };
 export type ButtonProps = ExtractPropTypes<typeof buttonProp>;

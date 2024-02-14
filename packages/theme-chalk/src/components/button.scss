@@ -8,6 +8,12 @@
     // 调用 button-style mixin 应用不同类型的按钮样式
     @include m($type) {
       @include button-style($type);
+
+    }
+  }
+  @each $size in $button-sizes{
+    @include m($size){
+      @include button-size($size)
     }
   }
 }
@@ -31,13 +37,14 @@
   vertical-align: middle;
   //当是默认
   @include m(default){
-    background-color: white!important;
+    background-color: white;
     color: #666666;
-    border: 1px solid #666666;
+    border: 1px solid #888888;
   }
-
+  &:hover{
+    opacity: 70%;
+  }
   @include when(round){
     border-radius: 20px;
   }
-
 }
