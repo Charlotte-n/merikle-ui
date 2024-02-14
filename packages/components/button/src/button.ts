@@ -19,7 +19,7 @@ export const buttonProp = {
   type: {
     type: String,
     validator: (
-      value: "default" | "primary" | "success" | "warning" | "info" | "danger"
+      value: "default" | "primary" | "success" | "warning" | "info" | "danger",
     ) => buttonTypes.includes(value),
     default: "default",
   },
@@ -38,3 +38,8 @@ export const buttonProp = {
   class: String,
 };
 export type ButtonProps = ExtractPropTypes<typeof buttonProp>;
+
+export const buttonEmits = {
+  click: (evt: MouseEvent) => evt instanceof MouseEvent,
+};
+export type ButtonEmits = typeof buttonEmits;

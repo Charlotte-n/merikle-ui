@@ -27,11 +27,11 @@ $sizes: (
 );
 // 定义按钮样式的 mixin
 @mixin button-style($type) {
-
   //hover
-  &:hover{
+  &:not([disabled]):hover{
     background-color: lighten(map.get($button-colors,$type), 10);
   }
+
   cursor: pointer;
   background-color: map-get($button-colors, $type);
 }

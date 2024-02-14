@@ -41,7 +41,7 @@ export const createNameSpace = (prefixName: string) => {
     blockSuffix && element && modifier
       ? _bem(prefixName, blockSuffix, element, modifier)
       : "";
-
+  const is = (name: string, state: boolean) => (state ? `is-${name}` : "");
   return {
     b,
     e,
@@ -50,5 +50,6 @@ export const createNameSpace = (prefixName: string) => {
     bm,
     em,
     bem,
+    is,
   };
 };
