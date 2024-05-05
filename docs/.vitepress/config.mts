@@ -12,9 +12,9 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: nav(),
     sidebar: {
-      "/vitepress/guid/": { base: "/vitepress/guid/", items: sidebarGuide() },
-      "/vitepress/components/": {
-        base: "/vitepress/components/",
+      "src/guid/": { base: "src/guid/", items: sidebarGuide() },
+      "src/components/": {
+        base: "src/components/",
         items: sidebarComponents(),
       },
     },
@@ -38,13 +38,13 @@ function nav(): DefaultTheme.NavItem[] {
     },
     {
       text: "文档",
-      link: "/vitepress/guid/getting-start",
-      activeMatch: "/vitepress/guid/",
+      link: "/src/guid/getting-start",
+      activeMatch: "/src/guid/",
     },
     {
       text: "组件",
-      link: "/vitepress/components/button",
-      activeMatch: "/vitepress/components/",
+      link: "/src/components/button",
+      activeMatch: "/src/components/",
     },
   ];
 }
@@ -64,6 +64,14 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
 
 function sidebarComponents(): any {
   return [
+    {
+      text: "布局组件",
+      collapsed: false,
+      items: [
+        { text: "icon", link: "icon" },
+        { text: "button", link: "button" },
+      ],
+    },
     {
       text: "组件",
       collapsed: false,

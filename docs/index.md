@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: 快速入门
-      link: /vitepress/guid/getting-start
+      link: src/guid/getting-start
     - theme: alt
       text: 组件库
-      link: /vitepress/components/icon
+      link: src/components/icon
 
 features:
   - title: Feature A

@@ -1,5 +1,4 @@
 @use '../mixins/mixin' as *;
-@use '../common/var' as *;
 @use '../mixins/button' as *;
 
 //根据不同的状态传入不同的颜色。
@@ -8,7 +7,9 @@
     // 调用 button-style mixin 应用不同类型的按钮样式
     @include m($type) {
       @include button-style($type);
-
+      @include when(plain){
+        @include button-plain-style($type)
+      }
     }
   }
   @each $size in $button-sizes{
@@ -24,8 +25,6 @@
   align-items: center;
 
   line-height: 1;
-
-  padding: 10px 20px;
   border:0;
   border-radius: 3px;
   color: white;
@@ -40,6 +39,12 @@
     background-color: white;
     color: #666666;
     border: 1px solid #888888;
+     &:not([disabled]):hover{
+      opacity: 70%;
+      background-color: lighten($primary, $amount: 10);
+      border: 1px solid lighten($primary, $amount: 10);
+      color: white;
+  }
   }
   &:not([disabled]):hover{
     opacity: 70%;
@@ -50,8 +55,7 @@
 
   @include when(circle){
     border-radius: 100%;
-    width: 50px;
-    height: 50px;
+    padding: 10px!important;
   }
   @include when(disabled){
     opacity: 0.7;
@@ -62,5 +66,19 @@
       background-image: none;
     }
   }
+  @include when(loading){
+    opacity: 0.7;    
+    .reload{
+      animation: rotateLoading 1.5s linear infinite;
+    }
+  }
 
+}
+//旋转
+@keyframes rotateLoading {
+  from{
+    transform: rotate(0deg);
+  }to{
+    transform: rotate(360deg);
+  }
 }

@@ -6,6 +6,7 @@ import {
 } from "@merikle-ui/components/button/src/button";
 import { useButton } from "@merikle-ui/components/button/src/useButton";
 import { useButtonCustomStyle } from "@merikle-ui/components/button/src/button-custom";
+import { Reload } from "@vicons/ionicons5";
 
 const bem = createNameSpace("button");
 defineOptions({
@@ -15,8 +16,19 @@ defineOptions({
 const prop = defineProps(buttonProp);
 const emits = defineEmits(buttonEmits);
 //单独弄出来一个hook来导出一些需要的属性
-const { _size, _type, _class, _round, _circle, _ref, _disabled, handleClick } =
-  useButton(prop, emits);
+const {
+  _size,
+  _type,
+  _class,
+  _round,
+  _circle,
+  _ref,
+  _disabled,
+  _icon,
+  _loading,
+  _plain,
+  handleClick,
+} = useButton(prop, emits);
 
 const style = useButtonCustomStyle(prop);
 //暴露出去
@@ -44,12 +56,21 @@ defineExpose({
       bem.is('round', _round),
       bem.is('circle', _circle),
       bem.is('disabled', _disabled),
+      bem.is('loading', _loading),
+      bem.is('plain', _plain),
       _class,
     ]"
     :style="style"
     :disabled="_disabled"
     @click="handleClick"
   >
+    <m-icon v-if="_loading" :size="15">
+      <Reload class="reload"></Reload>
+    </m-icon>
+    <m-icon v-else-if="_icon || $slots.icon">
+      <component v-if="_icon" :is="_icon"></component>
+      <slot v-else name="icon"></slot>
+    </m-icon>
     <slot></slot>
   </button>
 </template>

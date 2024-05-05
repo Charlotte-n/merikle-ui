@@ -1,0 +1,56 @@
+@use '../mixins/mixin' as *;
+
+@include b(input){
+  font-size: 13px;
+  width: 100%;
+  align-items: center;
+  display: inline-flex;
+  @include e(wrapper){
+    box-sizing: border-box;
+    display: inline-flex;
+    border: 1px solid #cccccc;
+    flex: 1;
+    align-items: center;
+    vertical-align: middle;
+
+  }
+  @include e(suffix){
+    display: inline-flex;
+    margin-right: 5px;
+  }
+  @include e(prefix){
+    display: inline-flex;
+    margin-left: 5px;
+  }
+
+  @include e(inner){
+    display: inline-flex;
+    border: 0;
+    outline: none;
+    padding: 0 10px;
+    //什么意思
+    appearance: none;
+    width: 100%;
+    height: 32px;
+  }
+
+}
+@include b(input-group){
+  @include e(append){
+    display: inline-flex;
+    padding: 0 10px;
+    line-height: 32px;
+    box-shadow: 0 0 0 1px #cccccc;
+    vertical-align: middle;
+  }
+  @include e(prepend){
+    display: inline-flex;
+    padding: 0 10px;
+    line-height: 32px;
+    box-shadow: 0 0 0 1px #cccccc;
+    vertical-align: middle;
+  }
+}
+
+
+

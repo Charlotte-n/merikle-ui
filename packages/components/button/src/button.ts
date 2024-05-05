@@ -1,6 +1,7 @@
 // 定义按钮的类型
 
-import { ExtractPropTypes } from "vue";
+import { iconPropType } from "@merikle-ui/components/icon";
+import { ExtractPropTypes, Component } from "vue";
 
 export const buttonTypes = [
   "default",
@@ -19,7 +20,7 @@ export const buttonProp = {
   type: {
     type: String,
     validator: (
-      value: "default" | "primary" | "success" | "warning" | "info" | "danger",
+      value: "default" | "primary" | "success" | "warning" | "info" | "danger"
     ) => buttonTypes.includes(value),
     default: "default",
   },
@@ -33,9 +34,11 @@ export const buttonProp = {
   round: Boolean,
   circle: Boolean,
   disabled: Boolean,
+  loading: Boolean,
   color: String,
   style: Object,
   class: String,
+  icon: Object,
 };
 export type ButtonProps = ExtractPropTypes<typeof buttonProp>;
 

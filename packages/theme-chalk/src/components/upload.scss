@@ -1,0 +1,8 @@
+@use '../mixins/mixin' as *;
+
+@include b(upload){
+  display: inline-flex;
+  input{
+    display: none;
+  }
+}

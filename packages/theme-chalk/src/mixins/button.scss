@@ -1,10 +1,11 @@
 @use 'sass:map';
-@use '../common/var.scss';
 @use './function.scss' as *;
-$primary:#857AFE;
-$info: #505050;
-$success: #09b63d;
-$warning: #f57b29;
+$types:primary info warning danger success;
+$button-sizes:small large middle;
+$primary:#FE7B05;
+$info: #909399;
+$success: #67C23A;
+$warning: #E6A23C;
 $danger: #ec3437;
 $button-colors: (
         'primary': $primary,
@@ -12,6 +13,14 @@ $button-colors: (
         'success': $success,
         'warning': $warning,
         'danger': $danger,
+);
+
+$button-plain-colors:(
+        'primary':lighten($primary,$amount:20),
+        'info': lighten($info,$amount:20),
+        'success': lighten($success,$amount:20),
+        'warning': lighten($warning,$amount:20),
+        'danger': lighten($danger,$amount:20),
 );
 
 $sizes: (
@@ -27,11 +36,6 @@ $sizes: (
 );
 // 定义按钮样式的 mixin
 @mixin button-style($type) {
-  //hover
-  &:not([disabled]):hover{
-    background-color: lighten(map.get($button-colors,$type), 10);
-  }
-
   cursor: pointer;
   background-color: map-get($button-colors, $type);
 }
@@ -39,4 +43,16 @@ $sizes: (
 //定义size的样式
 @mixin button-size($size){
   padding: map-get($sizes,$size,'padding')!important;
+}
+
+@mixin button-plain-style($type){
+        cursor: pointer;
+        background-color: lighten(map-get($button-colors,$type),40);
+        border: 1px solid lighten(map-get($button-colors,$type),20);
+        color: map-get($button-colors,$type);
+        &:hover{
+                background-color: map-get($button-colors,$type);
+                opacity: 100!important;
+                color: lighten(map-get($button-colors,$type),50);
+        }
 }

@@ -7,7 +7,7 @@ import {
 //查一下这个类型
 export const useButton = (
   props: ButtonProps,
-  emit: SetupContext<ButtonEmits>["emit"],
+  emit: SetupContext<ButtonEmits>["emit"]
 ) => {
   const _size = computed(() => props.size);
   const _type = computed(() => props.type);
@@ -16,6 +16,9 @@ export const useButton = (
   const _circle = computed(() => props.circle);
   const _disabled = computed(() => props.disabled);
   const _ref = ref<HTMLButtonElement>();
+  const _icon = computed(() => props.icon);
+  const _loading = computed(() => props.loading);
+  const _plain = computed(() => props.plain);
 
   const handleClick = (evt: MouseEvent) => {
     emit("click", evt);
@@ -29,6 +32,9 @@ export const useButton = (
     _circle,
     _disabled,
     _ref,
+    _icon,
+    _loading,
+    _plain,
     handleClick,
   };
 };
