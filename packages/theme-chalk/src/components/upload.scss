@@ -1,8 +1,38 @@
 @use '../mixins/mixin' as *;
 
 @include b(upload){
-  display: inline-flex;
+
+  font-size: 14px;
+  color: #606266;
   input{
     display: none;
   }
+  @include e(file){
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  .m-upload__tip{
+    margin-top: 3px;
+    font-size: 12px;
+  }
+
+}
+
+@include b(upload-avatar){
+  display: inline-flex;
+  padding: 30px;
+  border: 1px #DCDFE6 dashed;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+//拖拽上传
+@include b(upload-drag){
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 100px;
+  border-radius: 5px;
+  border: 1px #DCDFE6 dashed;
+  cursor: pointer;
 }

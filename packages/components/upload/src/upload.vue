@@ -70,6 +70,11 @@ const uploadContentProps = computed<UploadContentProps>(()=>(
 <template>
   <UploadContent v-bind="uploadContentProps">
     <slot></slot>
+    <template #tip>
+      <div class="el-upload__tip">
+        jpg/png files with a size less than 500KB.
+      </div>
+    </template>
   </UploadContent>
 
 </template>

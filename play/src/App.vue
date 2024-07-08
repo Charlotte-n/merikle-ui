@@ -1,11 +1,23 @@
 <script setup lang="ts">
-import { AddCircle } from "@vicons/ionicons5";
+import { AddCircle ,CloudUploadOutline} from "@vicons/ionicons5";
 import { ref } from "vue";
+import LayOut from  './components/layout/index.vue'
 const hello = () => {
   console.log(123);
   alert("123");
 };
 const inputValue = ref();
+const fileList = ref<any>([
+  {
+    name: 'element-plus-logo.svg',
+    url: 'https://element-plus.org/images/element-plus-logo.svg',
+  },
+  {
+    name: 'element-plus-logo2.svg',
+    url: 'https://element-plus.org/images/element-plus-logo.svg',
+  },
+])
+
 </script>
 
 <template>
@@ -57,13 +69,43 @@ const inputValue = ref();
     <!------------------------------------------------------------------->
 <!-------------------------上传组件------------------------------------>
     <div>
-      <m-upload>
-        <m-button>点击上传</m-button>
+      <m-upload :FileList="fileList">
+        <m-button size="small" type="primary">Click to upload</m-button>
+        <template #tip>
+            <div class="m-upload__tip">
+              jpg/png files with a size less than 500KB.
+            </div>
+        </template>
+      </m-upload>
+    </div>
+<!--    上传头像组件-->
+    <div>
+      <m-upload :show-file-list="false"></m-upload>
+    </div>
+
+<!--    拖拽上传-->
+    <div>
+      <m-upload drag>
+        <div>
+          <m-icon :size="33">
+            <CloudUploadOutline></CloudUploadOutline>
+          </m-icon>
+        </div>
+        <div class="el-upload__text">
+          Drop file here or <em>click to upload</em>
+        </div>
+        <template #tip>
+          <div class="el-upload__tip" style="font-size: 10px">
+            jpg/png files with a size less than 500kb
+          </div>
+        </template>
       </m-upload>
     </div>
     <!------------------------------------------------------------->
-
-
+<!--基础布局-->
+  </div>
+  <div>
+    <LayOut></LayOut>
   </div>
 
 </template>

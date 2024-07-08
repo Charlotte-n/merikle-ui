@@ -1,0 +1,28 @@
+@use 'sass:math';
+@use '../mixins/mixin' as *;
+@use '../mixins/config' as *;
+
+@for $i from 0 through 24{
+  .#{$namespace}-col-#{$i}{
+    display: if($i == 0,none,block);
+    @include when(guttered){
+      display:if($i == 0,none,block);
+    }
+    max-width: (math.div(1,24) * $i *100)*1%;
+    flex: 0 0 (math.div(1, 24) * $i * 100) * 1%;
+
+  }
+  .#{$namespace}-col-offset-#{$i} {
+    margin-left: (math.div(1, 24) * $i * 100) * 1%;
+  }
+
+  .#{$namespace}-col-pull-#{$i} {
+    position: relative;
+    right: (math.div(1, 24) * $i * 100) * 1%;
+  }
+
+  .#{$namespace}-col-push-#{$i} {
+    position: relative;
+    left: (math.div(1, 24) * $i * 100) * 1%;
+  }
+}

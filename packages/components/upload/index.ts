@@ -4,7 +4,7 @@ import { withInstall } from "@merikle-ui/utils/withinstall";
 
 //对组件进行注册
 export const MUpload = withInstall(_Upload);
-export * from "@element-plus/components/upload/src/upload-content.vue";
+export * from "@merikle-ui/components/upload/src/upload-content.vue";
 export default MUpload;
 
 declare module "vue" {

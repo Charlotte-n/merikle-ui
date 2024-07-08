@@ -23,6 +23,10 @@ export const baseProps = {
         type:String,
         default:''
     },
+    showFileList:{
+        type:Boolean,
+        default:true
+    },
     multiple:{
         type:Boolean,
         default:false

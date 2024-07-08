@@ -68,8 +68,7 @@ function sidebarComponents(): any {
       text: "布局组件",
       collapsed: false,
       items: [
-        { text: "icon", link: "icon" },
-        { text: "button", link: "button" },
+        { text: "layout", link: "layout" },
       ],
     },
     {
@@ -78,7 +77,10 @@ function sidebarComponents(): any {
       items: [
         { text: "icon", link: "icon" },
         { text: "button", link: "button" },
+        { text: "input", link: "input" },
+        { text: "upload", link: "upload" },
       ],
     },
+
   ];
 }
