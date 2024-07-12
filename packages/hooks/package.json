@@ -1,5 +1,5 @@
 {
-  "name": "@merikle-ui/components",
+  "name": "@merikle-ui/hooks",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,8 +8,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "lodash": "^4.17.21"
-  }
+  "license": "ISC"
 }

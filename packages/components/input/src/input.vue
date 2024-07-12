@@ -6,7 +6,7 @@ import {computed, nextTick, onMounted, ref, useAttrs, useSlots, watch} from "vue
 const bem = createNameSpace("input");
 const props = defineProps(InputProp);
 const emits = defineEmits(InputEmit);
-const attrs = useAttrs()
+const attrs = useAttrs();
 //获取外部的插槽
 const slots = useSlots();
 defineOptions({

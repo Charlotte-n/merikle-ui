@@ -6,6 +6,8 @@ export const IconProps = {
   size: [Number, String] as PropType<number | string>,
   color: String,
   style: Object,
+  icon:String,
+  customClass:String
 } as const;
 //设置为只读
 

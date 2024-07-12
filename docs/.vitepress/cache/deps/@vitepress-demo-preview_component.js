@@ -20,7 +20,7 @@ import {
   withCtx
 } from "./chunk-GDXBHH2G.js";
 
-// ../node_modules/.pnpm/@vitepress-demo-preview+component@2.3.2_vitepress@1.0.0-rc.42_vue@3.4.15/node_modules/@vitepress-demo-preview/component/dist/preview-component.js
+// ../node_modules/.pnpm/@vitepress-demo-preview+component@2.3.2_vitepress@1.0.0-rc.42_@algolia+client-search@4.22.1_@_6oandeidg344vdkvxioid3p77y/node_modules/@vitepress-demo-preview/component/dist/preview-component.js
 var Z = (t, n) => {
   const e = t.__vccOpts || t;
   for (const [c, l] of n)

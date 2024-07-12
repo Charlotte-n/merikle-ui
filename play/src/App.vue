@@ -27,6 +27,8 @@ const fileList = ref<any>([
       <m-icon :size="20" :color="'red'">
         <AddCircle></AddCircle>
       </m-icon>
+    <m-icon icon="alertCircle"></m-icon>
+
     </div>
     <!--------------------------------------------------------------->
 

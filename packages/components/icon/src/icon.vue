@@ -20,8 +20,10 @@ const style = computed(() => {
 
 <template>
   <i :class="bem.b()" :style="style">
+<!--    一种是通过插槽来进行的-->
     <slot></slot>
   </i>
+
 </template>
 
 <style scoped></style>

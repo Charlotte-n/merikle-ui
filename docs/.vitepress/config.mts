@@ -79,6 +79,7 @@ function sidebarComponents(): any {
         { text: "button", link: "button" },
         { text: "input", link: "input" },
         { text: "upload", link: "upload" },
+        { text: "message", link: "message" },
       ],
     },
 
