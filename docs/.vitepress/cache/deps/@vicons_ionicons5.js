@@ -4,7 +4,9 @@ import {
   createStaticVNode,
   defineComponent,
   openBlock
-} from "./chunk-GDXBHH2G.js";
+} from "./chunk-YX36GJZF.js";
+import "./chunk-IPJHVHSI.js";
+import "./chunk-Y2F7D3TJ.js";
 
 // ../node_modules/.pnpm/@vicons+ionicons5@0.12.0/node_modules/@vicons/ionicons5/es/Accessibility.js
 var _hoisted_1 = {

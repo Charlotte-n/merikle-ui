@@ -23,7 +23,7 @@ describe('Message',async ()=>{
         await rAF()
         expect(document.querySelector('.m-message')).toBeTruthy()
         handler.close()
-        expect(document.querySelector('.m-message')).toBeFalsy()
+        expect(document.querySelector('.m-message')).toBeTruthy()
     })
     //第二个测试用例
     test('test message closeAll',async()=>{

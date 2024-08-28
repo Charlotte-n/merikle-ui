@@ -6,14 +6,14 @@ import {
     MessageParams,
     messageType,
     MessageType
-} from "@element-plus/components/message/src/message";
+} from "@merikle-ui/components/message/src/message";
 import {findIndex, isString, set} from "lodash";
-import {isFunction} from "lodash-es";
-import {createVNode, isVNode, render} from "vue";
+import { h, isVNode, render} from "vue";
 import MessageConstructor from './src/message.vue'
 import useZIndex from "@merikle-ui/hooks/useZIndex"
+import {isFunction} from "lodash-es";
 
-const {nextZIndex} = useZIndex()
+const {nextZIndex} = useZIndex(0)
 let seed = 1
 const instances:MessageInstance[] = []//实例的数量
 const messageDefault = {
@@ -27,23 +27,17 @@ const messageDefault = {
  * @param options
  */
 const normalizeOption = (options:MessageParams):CreateMessageProps=>{
-    const result = !options || isString(options) || isVNode(options)?{
+    const result = !options || isString(options) || isVNode(options) || isFunction(options)?{
         message:options
     }:options
 
     return  {
         ...messageDefault,
         ...result
-    }
+    } as CreateMessageProps
 }
 
-//创建实例
-const closeMessage = (instance:any)=>{
-    const index = findIndex(instances,instance)
-    if(index === -1)return
 
-    instances.splice(index,1)
-}
 /**
  * 总结来说，createMessage 函数的作用是动态地创建一个消息组件，并将其渲染到指定的 DOM 元素中。该函数通过处理传入的参数和选项，生成一个可交互的消息提示，包括自定义的关闭行为和销毁逻辑，以防止内存泄漏。
  * @param options
@@ -51,36 +45,23 @@ const closeMessage = (instance:any)=>{
 const createMessage = (options:CreateMessageProps):MessageInstance=>{
     const id = `message_${seed++}`
     const container = document.createElement('div')
-
+    const destory = ()=>{
+        const index = findIndex(instances,{id})
+        if(index === -1)return
+        instances.splice(index,1)
+        render(null,container)
+    }
     const props= {
         ...options,
         id,
-        onDestory:()=>{
-            closeMessage({id})
-            render(null,container)
-        },
+        onDestory:destory,
         zIndex:nextZIndex() as number
     }
     //创建节点
-    const vnode = createVNode(
-        MessageConstructor,
-        props,
-        isFunction(props.message) || isVNode(props.message)?{
-            /**
-             * 根据条件选择性地返回一个函数或直接返回消息内容。
-             * 这里的目的是为了提供一种灵活的方式来显示消息，如果消息是一个函数，
-             * 则调用该函数以获取消息内容；如果消息不是一个函数，直接返回消息本身。
-             * 这种设计允许用户传入动态生成消息的函数，或者直接传入静态消息字符串。
-             *
-             * @returns {Function | any} 返回一个函数或消息内容。
-             */
-
-            default:isFunction(props.message)?props.message:()=>props.message
-        }:null
-    )
+    const vnode = h(MessageConstructor,props)
     render(vnode, container)
     //显示在页面上
-    document.body.appendChild(container.firstElementChild!)
+    document.body.appendChild(container.firstElementChild!);
     //这个 TypeScript 函数的作用是获取一个虚拟节点 (vnode) 的组件实例 (vm)。
     const vm = vnode.component!
     // 这样，父组件或者其他可以访问到这个组件的地方，就可以通过 vm.exposed.close 来调用这个方法了。在 Vue 3 中，vm 实例是组件的公共实例，而 exposed 属性就是这个实例上的一个属性，它保存了 setup 函数中通过 defineExpose 明确暴露出来的东西。
@@ -94,7 +75,6 @@ const createMessage = (options:CreateMessageProps):MessageInstance=>{
         props:(vnode.component as any).props,
         handler
     }
-
     instances.push(instance)
     return instance
 }
@@ -130,5 +110,17 @@ for(let type of messageType){
     })
 }
 
+//TODO:出错了，查找
+export const getLastBottomOffset = (id:string)=>{
+    const idx = instances.findIndex((instance) => {
+        return instance.id == id
+    })
+    let prev:any
+    if (idx > 0) {
+        prev = instances[idx - 1]
+    }
+    if (!prev) return 0
+    return prev.vm.exposed!.bottom.value
+}
 message.closeAll = closeAll
 export default message as Message

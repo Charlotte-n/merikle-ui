@@ -33,7 +33,9 @@ import {
   version,
   watch,
   watchEffect
-} from "./chunk-GDXBHH2G.js";
+} from "./chunk-YX36GJZF.js";
+import "./chunk-IPJHVHSI.js";
+import "./chunk-Y2F7D3TJ.js";
 
 // ../node_modules/.pnpm/vue-demi@0.14.7_vue@3.4.15_typescript@5.3.3_/node_modules/vue-demi/lib/index.mjs
 var isVue2 = false;

@@ -1,6 +1,8 @@
 import {defineComponent} from "vue";
 import {isFunction} from 'lodash-es'
 
+//查一下
+
 export const RenderVNode = defineComponent({
     props:{
         vNode: {
@@ -9,7 +11,9 @@ export const RenderVNode = defineComponent({
         }
     },
     setup(props){
-        return ()=>{isFunction(props.vNode)?props.vNode():props.vNode}
+        return ()=>
+            isFunction(props.vNode)?props.vNode():props.vNode
+
     }
 })
 

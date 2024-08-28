@@ -1,4 +1,4 @@
-import {ComponentInternalInstance, VNode} from "vue";
+import {ComponentInternalInstance, Ref, VNode} from "vue";
 
 export const messageType = [
     'info',
@@ -52,5 +52,13 @@ export  interface MessageInstance{
     props:MessageProps;
     vm:ComponentInternalInstance;
     handler:MessageHandler;
+}
+
+//定义导出的类型
+export interface MessageComInstance{
+    close:()=>void,
+    height:Ref<number>,
+    bottomOffset:Ref<number>,
+    visible:Ref<boolean>
 }
 export type CreateMessageProps = Omit<MessageProps, "onDestory"|"id" | "zIndex">

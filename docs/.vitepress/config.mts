@@ -75,11 +75,26 @@ function sidebarComponents(): any {
       text: "组件",
       collapsed: false,
       items: [
-        { text: "icon", link: "icon" },
-        { text: "button", link: "button" },
-        { text: "input", link: "input" },
-        { text: "upload", link: "upload" },
-        { text: "message", link: "message" },
+        { text: "Icon图标", link: "icon" },
+        { text: "Button按钮", link: "button" },
+        { text: "Message信息框", link: "message" },
+      ],
+    },
+    {
+      text: "导航",
+      collapsed: false,
+      items: [
+        { text: "Breadcrumb面包屑", link: "breadcrumb" },
+        { text: "DropDown下拉菜单", link: "dropdown" },
+        { text: "Pagination分页", link: "dropdown" },
+      ],
+    },
+    {
+      text: "表单",
+      collapsed: false,
+      items: [
+        { text: "Input输入框", link: "input" },
+        { text: "Upload上传", link: "upload" },
       ],
     },
 

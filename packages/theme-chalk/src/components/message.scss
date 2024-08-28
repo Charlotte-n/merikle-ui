@@ -1,0 +1,56 @@
+@use '../mixins/mixin' as *;
+@use '../style/global' as *;
+
+$message-colors: (
+        'primary': $primary,
+        'info': $info,
+        'success': $success,
+        'warning': $warning,
+        'error': $danger,
+);
+@include b(message){
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-width:1px;
+  border-style: solid;
+  box-shadow: 5px 5px 5px 5px #F2F1F1;
+  @each  $name, $color in $message-colors{
+    @include e($name){
+      color: $color;
+    }
+  }
+  border-color: transparent;
+  background-color: white;
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  padding:10px 10px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  //transition: top var(--lotus-transition-duration), opacity var(--lotus-transition-duration),
+  //transform var(--lotus-transition-duration);
+
+  @include e(close){
+       color: var(--normal-color);
+       display: flex;
+       align-items: center;
+}
+
+  @include e(close){
+    cursor: pointer;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+
+.m-message.fade-up-enter-from,
+.m-message.fade-up-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}

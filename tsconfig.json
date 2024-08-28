@@ -16,7 +16,7 @@
       "rootDir": ".",
     "noImplicitAny": true,
     "paths": {
-        "@element-plus/*": ["packages/*"]
+        "@merikle-ui/*": ["packages/*"]
       },
     "composite": true,
     "jsx": "preserve",

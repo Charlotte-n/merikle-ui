@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "eslint": "eslint . –ext .vue,.js,.jsx,.cjs,.mjs –fix –ignore-path .gitignore",
     "format": "prettier –write './**/*.{html,vue,ts,js,json,md}'",
@@ -26,7 +25,6 @@
     "cz-customizable": "^7.0.0",
     "eslint": "^8.56.0",
     "eslint-plugin-vue": "^9.21.1",
-    "husky": "^9.0.10",
     "sass": "^1.70.0",
     "typescript": "^5.3.3",
     "unplugin-vue-define-options": "^1.4.2",
@@ -37,7 +35,8 @@
     "@merikle-ui/components": "workspace:^",
     "@merikle-ui/theme-chalk": "workspace:^",
     "@merikle-ui/utils": "workspace:^",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "vue-router": "^4.4.3"
   },
   "config": {
     "commitizen": {

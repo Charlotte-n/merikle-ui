@@ -10,7 +10,6 @@ export const useButtonCustomStyle = (props: ButtonProps) => {
       //有按钮颜色
       styles["backgroundColor"] = buttonColor;
     }
-    console.log(styles);
 
     return styles;
   });
