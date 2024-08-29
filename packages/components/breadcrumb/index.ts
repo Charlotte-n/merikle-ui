@@ -5,7 +5,6 @@ import _BreadcrumbItem from "@merikle-ui/components/breadcrumb/src/breadcrumb-it
 export const MBreadcrumb= withInstall(_Breadcrumb,{
     _BreadcrumbItem
 })
-export default MBreadcrumb
 export const MBreadcrumbItem: SRCWithInstall<typeof _BreadcrumbItem> = withNoopInstall(_BreadcrumbItem)
 export * from './src/breadcrumb'
 export * from './src/breadcrumd-item'

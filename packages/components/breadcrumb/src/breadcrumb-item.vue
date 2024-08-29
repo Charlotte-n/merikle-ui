@@ -29,8 +29,8 @@ onMounted(()=>{
   <span ref="link" :class="[bem.e('inner')]" @click="handleClick">
     <slot></slot>
   </span>
-  <template v-if="breadcrumbContext!.separator" :class="bem.e('separator')">
-    <m-icon >
+  <template v-if="!breadcrumbContext!.separator" :class="bem.e('separator')">
+    <m-icon>
     <component :is="breadcrumbContext!.separatorIcon"></component>
   </m-icon>
   </template>

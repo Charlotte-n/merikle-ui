@@ -1,11 +1,9 @@
 <script setup lang="ts">
-
+import { AddCircle } from "@vicons/ionicons5";
 </script>
 
 <template>
-  <div>123</div>
-  <m-breadcrumb >
-   <div>
+  <m-breadcrumb separator="/" :separator-icon="AddCircle">
      <m-breadcrumb-item>homepage</m-breadcrumb-item>
      <m-breadcrumb-item :to="{ path: '/' }">homepage</m-breadcrumb-item>
      <m-breadcrumb-item>
@@ -13,7 +11,6 @@
      </m-breadcrumb-item>
      <m-breadcrumb-item>promotion list</m-breadcrumb-item>
      <m-breadcrumb-item>promotion detail</m-breadcrumb-item>
-   </div>
   </m-breadcrumb>
 </template>
 

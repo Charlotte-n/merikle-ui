@@ -7,13 +7,13 @@ import {MIcon} from "@merikle-ui/components";
 defineOptions({
   name:'m-breadcrumb'
 })
+//
 const props = defineProps({ separator: {
     type: String,
-    default: '/',
+    default: '>',
   },
   separatorIcon: {
-    type: Object as  PropType<typeof MIcon>,
-    default: '',
+    type: Object as  PropType<typeof MIcon> || String,
   }})
 const bem = createNameSpace('breadcrumb')
 const breadcrumbRef = ref<HTMLDivElement>()

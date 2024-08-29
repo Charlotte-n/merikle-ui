@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <m-icon :color="'red'" :size="30"></m-icon>
+  <m-icon :color="'red'" :size="80"></m-icon>
   <ion-icon name="alert-circle-outline">
   </ion-icon>
 </template>

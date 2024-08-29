@@ -26,6 +26,6 @@ export const withInstallFunction = <T>(fn:T,name:string)=>{
 
 export const withNoopInstall = <T>(component: T) => {
   ;(component as SRCWithInstall<T>).install = NOOP
-
+  console.log(component)
   return component as SRCWithInstall<T>
 }
