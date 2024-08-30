@@ -1,7 +1,6 @@
 import {MIcon} from "@merikle-ui/components";
 import {ExtractPropTypes, PropType} from "vue";
 
-//
 export const breadcrumbProp = {
     separator: {
         type: String,

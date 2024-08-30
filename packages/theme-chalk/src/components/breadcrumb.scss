@@ -1,5 +1,11 @@
 @use '../mixins/mixin' as *;
 
 @include b(breadcrumb){
-
+  cursor: pointer;
+}
+@include b(breadcrumb-item){
+  @include e(separator){
+    margin: 0 10px;
+    vertical-align: middle;
+  }
 }
