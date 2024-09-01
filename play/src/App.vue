@@ -4,6 +4,7 @@ import { ref } from "vue";
 import LayOut from  './components/layout/index.vue'
 import Message from "./components/message/message.vue";
 import Breadcrumb from "./components/breadcrumb/breadcrumb.vue";
+import Tree from "./components/tree/tree.vue";
 const hello = () => {
   console.log(123);
   alert("123");
@@ -115,6 +116,8 @@ const fileList = ref<any>([
   <Message></Message>
 <!--  面包屑导航-->
 <Breadcrumb></Breadcrumb>
+<!--  树形选择器-->
+  <Tree></Tree>
 </template>
 
 <style scoped>

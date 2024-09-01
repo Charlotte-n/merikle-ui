@@ -10,7 +10,7 @@ export interface TreeNode extends Required<TreeOptions>{
 export interface  TreeOptions {
     label?:Key,
     key?:Key,
-    children?:TreeOptions[],
+    children?:TreeNode[],
     isLeaf?:boolean,
     [key:string]:unknown
 }
@@ -18,7 +18,8 @@ export interface  TreeOptions {
 export const treeProps = {
     data:{
         type:Array as PropType<TreeOptions[]>,
-        required:true
+        required:true,
+        default:()=>[]
     },
     labelField:{
         type:String,
@@ -31,6 +32,10 @@ export const treeProps = {
     childrenField:{
         type:String,
         default:'children'
+    },
+    defaultExpandedKeys:{
+        type:Array as PropType<Key[]>,
+        default:()=>[]
     }
 } as const
 //可选加提取这个Props
